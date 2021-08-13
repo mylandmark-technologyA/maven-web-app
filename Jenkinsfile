@@ -12,19 +12,19 @@ git credentialsId: 'git-credentials5', url: 'https://github.com/mylandmark-techn
   // execute the CodeQuality report with sonar
   }
   stage('emailQualityIssues') {
-    emailext body: '''Thanks
-Landmark Technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'mylandmarktech@gmail.com'
+    //emailext body: '''Thanks
+//Landmark Technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'mylandmarktech@gmail.com'
   }
 
    stage('UploadNexus') {
-    sh "${mavenHome}/bin/mvn deploy"
+    //sh "${mavenHome}/bin/mvn deploy"
     //mvn deploy  are uploaded in to nexus
   }
 stage('DeployTomcat') {
-deploy adapters: [tomcat9(credentialsId: 'newtomcat', path: '', url: 'http://18.119.106.80:7000/')], contextPath: null, war: 'target/*war'  
+//deploy adapters: [tomcat9(credentialsId: 'newtomcat', path: '', url: 'http://18.119.106.80:7000/')], contextPath: null, war: 'target/*war'  
 }
 stage('emailDeployIssues') {
-emailext body: '''thanks
+//emailext body: '''thanks
 landmarktechnologies''', recipientProviders: [developers()], subject: 'status of build', to: 'mylandmarktech@gmail.com'
 }
 }
