@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url>http://18.117.222.176:8081/repository/ebay-java-web-app-release/</url>
+	      <url>http://18.191.69.217:8888/mylandmarktech/repository/boa-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository </name>
-	      <url>http://18.117.222.176:8081/repository/ebay-java-web-app-snapshot/</url>
+	      <url>http://18.191.69.217:8888/mylandmarktech/repository/boa-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
