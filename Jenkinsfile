@@ -9,7 +9,7 @@ stage('mavenBuild')
 {
     sh "${mavenHome}/bin/mvn clean package"
 }
-//stage('3. CodeQuality')
+stage('3. CodeQuality')
 {
    // sh "${mavenHome}/bin/mvn sonar:sonar"
 } 
