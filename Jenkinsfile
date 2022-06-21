@@ -35,4 +35,5 @@ stage('7. emailNotification')
    // emailext body: '''thanks
 landmark technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'ndimukongndeh@gmail.com'
 }
-}*/
+}
+*/
