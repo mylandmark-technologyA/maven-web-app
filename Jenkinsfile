@@ -16,7 +16,7 @@ stage('3. CodeQuality')
 stage('emailQualityIssues')
 {
    // emailext body: '''thanks
-landmark technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'ndimukongndeh@gmail.com'
+//landmark technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'ndimukongndeh@gmail.com'
 }
 stage('4.UploadNexus') 
 {
