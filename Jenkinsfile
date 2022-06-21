@@ -36,4 +36,3 @@ stage('7. emailNotification')
 landmark technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'ndimukongndeh@gmail.com'
 }
 }*/
-
