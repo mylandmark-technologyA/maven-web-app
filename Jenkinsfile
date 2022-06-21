@@ -9,7 +9,7 @@ stage('mavenBuild')
 {
     sh "${mavenHome}/bin/mvn clean package"
 }
-/*stage('3. CodeQuality')
+stage('3. CodeQuality')
 {
    // sh "${mavenHome}/bin/mvn sonar:sonar"
 } 
@@ -33,7 +33,6 @@ stage('6. DeployTomcat')
 stage('7. emailNotification')
 {
    // emailext body: '''thanks
-landmark technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'ndimukongndeh@gmail.com'
+//landmark technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'ndimukongndeh@gmail.com'
 }
 }
-*/
