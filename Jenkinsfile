@@ -1,30 +1,39 @@
-node{
-  def mavenHome = tool name: 'maven3.8.1'
-  stage('CodeClone') {
-git credentialsId: 'git-credentials5', url: 'https://github.com/mylandmark-technologyA/maven-web-app.git'
+node
+{
+def mavenHome = tool name: 'maven3.8.6'
+  stage('CodeClone') 
+  {
+    git credentialsId: 'git-credential1', url: 'https://github.com/ndimukong2021/web'
   }
-  stage('mavenBuild') {
+stage('mavenBuild') 
+{
     sh "${mavenHome}/bin/mvn clean package"
-  }
+}
+/*stage('3. CodeQuality')
+{
+   // sh "${mavenHome}/bin/mvn sonar:sonar"
+} 
+stage('emailQualityIssues')
+{
+   // emailext body: '''thanks
+landmark technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'ndimukongndeh@gmail.com'
+}
+stage('4.UploadNexus') 
+{
+//sh "${mavenHome}/bin/mvn deploy"
+}
+stage('5. Approval') 
+{
+//echo "Approved. Ready for deployment"
+}
+stage('6. DeployTomcat') 
+{
+//deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://3.134.88.232:7000/')], contextPath: null, war: 'target/*war'
+}
+stage('7. emailNotification')
+{
+   // emailext body: '''thanks
+landmark technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'ndimukongndeh@gmail.com'
+}
+}*/
 
-  stage('CodeQuality') {
-    sh "${mavenHome}/bin/mvn sonar:sonar"
-  // execute the CodeQuality report with sonar
-  }
-  stage('emailQualityIssues') {
-    //emailext body: '''Thanks
-//Landmark Technologies''', recipientProviders: [developers()], subject: 'status of build', to: 'mylandmarktech@gmail.com'
-  }
-
-   stage('UploadNexus') {
-    //sh "${mavenHome}/bin/mvn deploy"
-    //mvn deploy  are uploaded in to nexus
-  }
-stage('DeployTomcat') {
-//deploy adapters: [tomcat9(credentialsId: 'newtomcat', path: '', url: 'http://18.119.106.80:7000/')], contextPath: null, war: 'target/*war'  
-}
-stage('emailDeployIssues') {
-//emailext body: '''thanks
-landmarktechnologies''', recipientProviders: [developers()], subject: 'status of build', to: 'mylandmarktech@gmail.com'
-}
-}
